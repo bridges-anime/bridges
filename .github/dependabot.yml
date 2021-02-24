@@ -14,7 +14,3 @@ updates:
       - lunaisnotaboy
     assignees:
       - lunaisnotaboy
-    commit-message:
-      prefix: fix
-    prefix-development: chore
-    include: scope
