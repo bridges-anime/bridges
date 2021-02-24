@@ -6,8 +6,6 @@
   <p>an open-source anime streaming service</p>
 </div>
 
----
-
 **bridges** (all lowercase) is an open-source anime streaming service that allows for quality anime streaming using only free and open-source software.
 
 ### Disclaimer
