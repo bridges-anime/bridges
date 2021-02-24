@@ -1,0 +1,2 @@
+class Studio < ApplicationRecord
+end

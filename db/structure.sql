@@ -140,7 +140,8 @@ CREATE TABLE public.shows (
     release_date date NOT NULL,
     seasons integer DEFAULT 0 NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    studios_id bigint
 );
 
 
@@ -161,6 +162,39 @@ CREATE SEQUENCE public.shows_id_seq
 --
 
 ALTER SEQUENCE public.shows_id_seq OWNED BY public.shows.id;
+
+
+--
+-- Name: studios; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.studios (
+    id bigint NOT NULL,
+    name character varying NOT NULL,
+    description text NOT NULL,
+    logo character varying NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: studios_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.studios_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: studios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.studios_id_seq OWNED BY public.studios.id;
 
 
 --
@@ -232,6 +266,13 @@ ALTER TABLE ONLY public.shows ALTER COLUMN id SET DEFAULT nextval('public.shows_
 
 
 --
+-- Name: studios id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.studios ALTER COLUMN id SET DEFAULT nextval('public.studios_id_seq'::regclass);
+
+
+--
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -279,6 +320,14 @@ ALTER TABLE ONLY public.shows
 
 
 --
+-- Name: studios studios_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.studios
+    ADD CONSTRAINT studios_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -308,6 +357,13 @@ CREATE INDEX index_sessions_on_updated_at ON public.sessions USING btree (update
 
 
 --
+-- Name: index_shows_on_studios_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_shows_on_studios_id ON public.shows USING btree (studios_id);
+
+
+--
 -- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -326,6 +382,14 @@ CREATE UNIQUE INDEX index_users_on_email ON public.users USING btree (email);
 --
 
 CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING btree (reset_password_token);
+
+
+--
+-- Name: shows fk_rails_04660df560; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.shows
+    ADD CONSTRAINT fk_rails_04660df560 FOREIGN KEY (studios_id) REFERENCES public.studios(id);
 
 
 --
@@ -350,6 +414,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210224145453'),
 ('20210224145459'),
 ('20210224151452'),
-('20210224151849');
+('20210224151849'),
+('20210224155409'),
+('20210224155718');
 
 
