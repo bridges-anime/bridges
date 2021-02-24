@@ -186,7 +186,8 @@ CREATE TABLE public.videos (
     air_date date NOT NULL,
     thumbnail character varying NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    shows_id bigint
 );
 
 
@@ -321,6 +322,21 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING bt
 
 
 --
+-- Name: index_videos_on_shows_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_videos_on_shows_id ON public.videos USING btree (shows_id);
+
+
+--
+-- Name: videos fk_rails_1d02236bd6; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.videos
+    ADD CONSTRAINT fk_rails_1d02236bd6 FOREIGN KEY (shows_id) REFERENCES public.shows(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -332,6 +348,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210224010919'),
 ('20210224013712'),
 ('20210224145453'),
-('20210224145459');
+('20210224145459'),
+('20210224151452');
 
 
