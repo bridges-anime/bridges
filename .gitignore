@@ -39,6 +39,7 @@ yarn-debug.log*
 # Ignore vendor files, but keep the directory.
 /vendor/*
 !/vendor/.keep
+!/vendor/cache
 
 # Ignore database.yml
 /config/database.yml
