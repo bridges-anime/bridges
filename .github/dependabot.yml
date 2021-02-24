@@ -9,3 +9,12 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 10
+    reviewers:
+      - lunaisnotaboy
+    assignees:
+      - lunaisnotaboy
+    commit-message:
+      prefix: fix
+    prefix-development: chore
+    include: scope
