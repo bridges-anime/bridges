@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="" alt="bridges logo" />
+  <img src="https://github.com/bridges-anime/bridges/raw/master/app/assets/images/logo.svg" alt="bridges logo" width="256px" />
 
-  <h2>bridges</h2>
+  <h1>bridges</h1>
 
   <p>an open-source anime streaming service</p>
 </div>
