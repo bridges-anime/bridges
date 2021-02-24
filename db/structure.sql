@@ -54,6 +54,41 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
+-- Name: episodes; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.episodes (
+    id bigint NOT NULL,
+    title character varying NOT NULL,
+    description text NOT NULL,
+    air_date date NOT NULL,
+    thumbnail character varying NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL,
+    shows_id bigint
+);
+
+
+--
+-- Name: episodes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.episodes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: episodes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.episodes_id_seq OWNED BY public.episodes.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -176,38 +211,10 @@ ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: videos; Type: TABLE; Schema: public; Owner: -
+-- Name: episodes id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-CREATE TABLE public.videos (
-    id bigint NOT NULL,
-    title character varying NOT NULL,
-    description text NOT NULL,
-    air_date date NOT NULL,
-    thumbnail character varying NOT NULL,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL,
-    shows_id bigint
-);
-
-
---
--- Name: videos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.videos_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: videos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.videos_id_seq OWNED BY public.videos.id;
+ALTER TABLE ONLY public.episodes ALTER COLUMN id SET DEFAULT nextval('public.episodes_id_seq'::regclass);
 
 
 --
@@ -232,18 +239,19 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
--- Name: videos id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.videos ALTER COLUMN id SET DEFAULT nextval('public.videos_id_seq'::regclass);
-
-
---
 -- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.ar_internal_metadata
     ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: episodes episodes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.episodes
+    ADD CONSTRAINT episodes_pkey PRIMARY KEY (id);
 
 
 --
@@ -279,11 +287,10 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: videos videos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: index_episodes_on_shows_id; Type: INDEX; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.videos
-    ADD CONSTRAINT videos_pkey PRIMARY KEY (id);
+CREATE INDEX index_episodes_on_shows_id ON public.episodes USING btree (shows_id);
 
 
 --
@@ -322,17 +329,10 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING bt
 
 
 --
--- Name: index_videos_on_shows_id; Type: INDEX; Schema: public; Owner: -
+-- Name: episodes fk_rails_1d02236bd6; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-CREATE INDEX index_videos_on_shows_id ON public.videos USING btree (shows_id);
-
-
---
--- Name: videos fk_rails_1d02236bd6; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.videos
+ALTER TABLE ONLY public.episodes
     ADD CONSTRAINT fk_rails_1d02236bd6 FOREIGN KEY (shows_id) REFERENCES public.shows(id);
 
 
@@ -349,6 +349,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210224013712'),
 ('20210224145453'),
 ('20210224145459'),
-('20210224151452');
+('20210224151452'),
+('20210224151849');
 
 
