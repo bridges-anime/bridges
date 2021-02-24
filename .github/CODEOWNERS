@@ -1,21 +1,23 @@
 # The code owners file
 
-# Assets
+# Assets (@bridges-anime/images & @bridges-anime/styles)
 /app/assets/images/ @bridges-anime/images
-/app/assets/stylesheets @bridges-anime/styles
+/app/assets/stylesheets/ @bridges-anime/styles
 /postcss.config.js @bridges-anime/styles
 
-# Community files
+# Community files (@lunaisnotaboy)
 /.github/ @lunaisnotaboy
 /README.md @lunaisnotaboy
 /CODE_OF_CONDUCT.md @lunaisnotaboy
 /LICENSE @lunaisnotaboy
 
-# JS stuff
+# JS stuff (@bridges-anime/javascript)
 /package.json @bridges-anime/javascript
 /yarn.lock @bridges-anime/javascript
 /babel.config.js @bridges-anime/javascript
 /app/javascript @bridges-anime/javascript
 
-# Ruby
+# Ruby (@bridges-anime/rails)
 *.rb @bridges-anime/rails
+/Gemfile @bridges-anime/rails
+/Gemfile.lock @bridges-anime/rails
