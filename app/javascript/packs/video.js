@@ -10,7 +10,7 @@ const player = new Plyr(video);
 if (shaka.Player.isBrowserSupported()) {
   // Install built-in polyfills
   shaka.polyfill.installAll();
-  
+
   const shakaInstance = new shaka.Player(video);
 
   shakaInstance.load(source);
