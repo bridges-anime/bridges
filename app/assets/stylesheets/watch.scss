@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans&display=swap');
+
+:root {
+  --plyr-color-main: #5B21B6;
+  --plyr-font-family: 'Open Sans', sans-serif;
+}
+
 #player {
-  --plyr-color-main: #60A5FA;
+  height: 480px;
+  background-color: black;
+}
+
+.plyr:fullscreen video{
+  max-height: initial;
 }
