@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bridges</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />
     <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
+    <%= yield :head %>
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <script src="https://cdn.plyr.io/3.6.4/plyr.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.4.0/shaka-player.compiled.js"></script>
-    <%= javascript_pack_tag 'video' %>
+    <%= yield :scripts %>
   </body>
 </html>

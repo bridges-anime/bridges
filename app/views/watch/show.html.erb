@@ -1,3 +1,17 @@
+<%# insert title tag and page-specific styles %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'https://cdn.plyr.io/3.6.4/plyr.css' %>
+  <title>Watch placeholder - bridges</title>
+<% end %>
+
+<%# we're using the demo shaka video until an hls server is written %>
 <div id="video-container">
   <video id="player" controls crossorigin playsinline poster="https://shaka-player-demo.appspot.com/assets/poster.jpg"></video>
 </div>
+
+<%# insert page-specific scripts %>
+<% content_for :scripts do %>
+  <%= javascript_include_tag 'https://cdn.plyr.io/3.6.4/plyr.js' %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.4.0/shaka-player.compiled.js' %>
+  <%= javascript_pack_tag 'video' %>
+<% end %>
