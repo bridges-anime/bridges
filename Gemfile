@@ -59,7 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "tailwindcss-rails", "~> 0.3.3"
 
-gem 'capistrano', '~> 3.11'
+gem 'capistrano', '~> 3.16'
 
 gem 'capistrano-rails', '~> 1.4'
 
