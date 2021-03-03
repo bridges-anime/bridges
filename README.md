@@ -27,3 +27,15 @@ bridges negotiates rights with their respective owners. This repository is here 
 ### License
 
 bridges is licensed under the [AGPL](LICENSE).
+
+### Canonical Source
+
+bridges is hosted on [Bitbucket], so all pull requests should be directed there. The repository on [GitHub] is an official mirror.
+
+### Hey, I found a bug!
+
+You can report it on our [Jira].
+
+[Bitbucket]: https://git.themintfarm.ml/projects/BRID/repos/bridges
+[GitHub]: https://github.com/bridges-anime/bridges
+[Jira]: https://jira.themintfarm.ml/projects/BRID
