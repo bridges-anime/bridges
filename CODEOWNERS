@@ -1,4 +1,5 @@
 # The code owners file
+# now useless, we use bitbucket instead of GH
 
 # Assets (@bridges-anime/images & @bridges-anime/styles)
 /app/assets/images/ @bridges-anime/images
