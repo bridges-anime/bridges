@@ -1,45 +1,97 @@
+<%# insert title tag and page-specific styles %>
+<% content_for :head do %>
+  <title>sign in - bridges</title>
+<% end %>
+
 <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full space-y-8">
     <div>
-      <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+      <%= image_tag "logo.svg", :class => "mx-auto h-12 w-auto", :alt => "bridges logo" %>
       <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
         Sign in to bridges
       </h2>
       <p class="mt-2 text-center text-sm text-gray-600">
         Or
-        <%= link_to "sign up for bridges", new_registration_path(resource_name), :class => "font-medium text-indigo-600 hover:text-indigo-500" %>
+        <%= link_to "sign up for bridges", new_registration_path(resource_name), :class => "font-medium text-purple-600 hover:text-purple-500" %>
+      </p>
+      <p class="mt-2 text-center text-sm text-gray-600">
+        <%= alert %>
       </p>
     </div>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "mt-8 space-y-6"}) do |f| %>
+    <% if resource.errors.any? %>
+      <div class="fixed z-10 inset-0 overflow-y-auto">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+          </div>
+          <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+          <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                  <!-- Heroicon name: outline/exclamation -->
+                  <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                  <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+                    <%= I18n.t("errors.messages.not_saved",
+                                count: resource.errors.count,
+                                resource: resource.class.model_name.human.downcase)
+                    %>
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                      <ul>
+                        <% resource.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+              <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                Okay
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "mt-8 space-y-6"}) do |f| %>
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
           <%= f.label :email, :class => "sr-only" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm", placeholder: "Email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm", placeholder: "Email" %>
         </div>
         <div>
           <%= f.label :password, :class => "sr-only" %>
-          <%= f.password_field :password, autocomplete: "current-password", :class => "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm", placeholder: "Password" %>
+          <%= f.password_field :password, autocomplete: "current-password", :class => "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm", placeholder: "Password" %>
         </div>
       </div>
 
       <div class="flex items-center justify-between">
         <div class="flex items-center">
-          <input id="remember" name="remember" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+          <input id="remember" name="remember" type="checkbox" class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
           <label for="remember" class="ml-2 block text-sm text-gray-900">
             Remember me
           </label>
         </div>
 
         <div class="text-sm">
-          <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "font-medium text-indigo-600 hover:text-indigo-500" %>
+          <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "font-medium text-purple-600 hover:text-purple-500" %>
         </div>
       </div>
 
       <div>
-        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
           <span class="absolute left-0 inset-y-0 flex items-center pl-3">
             <!-- Heroicon name: solid/lock-closed -->
-            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <svg class="h-5 w-5 text-purple-500 group-hover:text-purple-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
             </svg>
           </span>
@@ -50,8 +102,8 @@
     <div>
       <p class="text-center font-medium text-gray-600">Or sign in with an external provider:</p>
     </div>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), :class => "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
-    <% end %>
+    <%= link_to "Sign in with GitHub", omniauth_authorize_path(resource_name, :github), :class => "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+    <%= link_to "Sign in with Google", omniauth_authorize_path(resource_name, :google_oauth2), :class => "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+    <%= link_to "Sign in with Twitter", omniauth_authorize_path(resource_name, :twitter), :class => "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
   </div>
 </div>
