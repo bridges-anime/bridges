@@ -14,7 +14,7 @@ FileUtils.chdir APP_ROOT do
   # Add necessary setup steps to this file.
 
   puts '== Installing dependencies =='
-  system! 'gem install bundler --conservative'
+  system! 'gem install bundler'
   system('bundle check') || system!('bundle install')
   system! "gem list \"^foreman$\" -v 0.87.2 -i --silent || gem install foreman"
 
