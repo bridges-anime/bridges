@@ -3,7 +3,7 @@ FROM gitpod/workspace-postgres
 # Install Ruby
 ENV RUBY_VERSION=2.7.2
 RUN rm /home/gitpod/.rvmrc && touch /home/gitpod/.rvmrc && echo "rvm_gems_path=/home/gitpod/.rvm" > /home/gitpod/.rvmrc
-RUN bash -lc "rvm install ruby-$RUBY_VERSION && rvm use ruby-$RUBY_VERSION --default"
+RUN bash -lc "rvm install ruby-$RUBY_VERSION && rvm use ruby-$RUBY_VERSION --default && gem install bundler"
 
 # Install Node and Yarn
 ENV NODE_VERSION=14.14.0
