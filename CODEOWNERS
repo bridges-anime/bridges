@@ -1,5 +1,6 @@
 # The code owners file
-# now useless, we use bitbucket instead of GH
+# now useless, we use bitbucket instead of GH (2021-03-11: ISP terminated our subscription, we use GH for now)
+# More info @ https://themintfarm.ml
 
 # Assets (@bridges-anime/images & @bridges-anime/styles)
 /app/assets/images/ @bridges-anime/images
