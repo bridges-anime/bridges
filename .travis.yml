@@ -12,6 +12,6 @@ before_script:
   - yarn
   - cp config/database.yml.sample config/database.yml
   - bundle exec rake db:create
-  - bundle exec rake db:structure:load
+  - bundle exec rake db:schema:load
 script:
   - echo "Install complete"
