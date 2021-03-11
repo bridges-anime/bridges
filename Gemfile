@@ -32,7 +32,7 @@ gem 'omniauth-google-oauth2', '~> 0.8.1'
 # Use Omniauth Twitter plugin
 gem 'omniauth-twitter', '~> 1.4'
 # Use ActiveRecord Sessions
-gem 'activerecord-session_store', '~> 1.1', '>= 1.1.3'
+gem 'activerecord-session_store', '~> 2.0'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
