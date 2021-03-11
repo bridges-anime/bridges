@@ -111,4 +111,19 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # E-mails
+  config.action_mailer.default_options = {
+    from: ENV.fetch('SMTP_FROM_ADDRESS', 'noreply@localhost')
+  }
+
+  config.action_mailer.smtp_settings = {
+    :port                 => ENV['SMTP_PORT'],
+    :address              => ENV['SMTP_SERVER'],
+    :user_name            => ENV['SMTP_LOGIN'].presence,
+    :password             => ENV['SMTP_PASSWORD'].presence,
+    :domain               => ENV['SMTP_DOMAIN'] || ENV['LOCAL_DOMAIN'],
+    :authentication       => ENV['SMTP_AUTH_METHOD'] == 'none' ? nil : ENV['SMTP_AUTH_METHOD'] || :plain,
+    :enable_starttls_auto => ENV['SMTP_ENABLE_STARTTLS_AUTO'] || true,
+  }
 end
