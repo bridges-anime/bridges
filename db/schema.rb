@@ -13,8 +13,6 @@
 ActiveRecord::Schema.define(version: 2021_02_24_155718) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "btree_gist"
-  enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
   create_table "episodes", force: :cascade do |t|
@@ -73,8 +71,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_155718) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "provider", limit: 50, default: "", null: false
-    t.string "uid", limit: 500, default: "", null: false
     t.boolean "admin", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

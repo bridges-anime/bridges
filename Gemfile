@@ -23,14 +23,6 @@ gem 'redis', '~> 4.0'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 # Use Devise for authentication
 gem 'devise', '~> 4.7', '>= 4.7.3', github: 'heartcombo/devise'
-# Use Omniauth for external authentication
-gem 'omniauth', '~> 2.0', '>= 2.0.3', github: 'omniauth/omniauth'
-# Use Omniauth Github plugin
-gem 'omniauth-github', '~> 2.0'
-# Use Omniauth Google plugin
-gem 'omniauth-google-oauth2', '~> 1.0.0'
-# Use Omniauth Twitter plugin
-gem 'omniauth-twitter', '~> 1.4'
 # Use ActiveRecord Sessions
 gem 'activerecord-session_store', '~> 2.0'
 

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index'
 
   # authentication
-  devise_for :users, path: 'auth', controllers: { omniauth_callbacks: 'users/omniauth' }
+  devise_for :users, path: 'auth'
 
   # api routes
   namespace :api do
