@@ -31,3 +31,5 @@ bridges is licensed under the [AGPL](LICENSE).
 ### Canonical Source
 
 bridges is hosted on [GitHub].
+
+[GitHub]: https://github.com/bridges-anime/bridges
