@@ -1,1 +1,1 @@
-Rails.application.config.session_store :active_record_store, key: '_bridges_sessions'
+Rails.application.config.session_store :active_record_store, key: '_breaking_some_bridges'
