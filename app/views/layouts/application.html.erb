@@ -90,15 +90,19 @@
               </div>
             </div>
           </div>
-          <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-          >
-            <a
-              href="/users/sign_in"
-              class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
-              >Sign in</a
+          <% if is_user_logged_in != true %>
+            <div
+              class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
             >
-          </div>
+              <a
+                href="/users/sign_in"
+                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+                >Sign in</a
+              >
+            </div>
+          <% else %>
+            <%# nothing %>
+          <% end %>
         </div>
       </div>
       <div class="sm:hidden" id="mobile-menu">

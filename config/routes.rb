@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   # watch routes
   get '/watch/:id', to: 'watch#show'
 
+  # about route
+  get '/about', to: 'about#index'
+
+  # user dashboard route
+  get '/dashboard', to: 'dashboard#index'
+
   # authentication
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth' }
 
