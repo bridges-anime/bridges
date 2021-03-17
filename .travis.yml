@@ -15,6 +15,9 @@ env:
 before_install:
   - nvm install 14
   - gem install bundler:2.2.5
+  - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
+  - sudo service postgresql restart
+  - sleep 1
 before_script:
   - bundle install --jobs=3 --retry=3
   - yarn
