@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_17_175820) do
+ActiveRecord::Schema.define(version: 2021_03_17_181500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "communities", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.string "icon", null: false
+    t.string "banner", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "episodes", force: :cascade do |t|
     t.string "title", null: false
@@ -24,6 +33,27 @@ ActiveRecord::Schema.define(version: 2021_03_17_175820) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["shows_id"], name: "index_episodes_on_shows_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body", null: false
+    t.bigint "communities_id", null: false
+    t.bigint "users_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["communities_id"], name: "index_posts_on_communities_id"
+    t.index ["users_id"], name: "index_posts_on_users_id"
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.text "body", null: false
+    t.bigint "users_id", null: false
+    t.bigint "posts_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["posts_id"], name: "index_replies_on_posts_id"
+    t.index ["users_id"], name: "index_replies_on_users_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -78,5 +108,9 @@ ActiveRecord::Schema.define(version: 2021_03_17_175820) do
   end
 
   add_foreign_key "episodes", "shows", column: "shows_id"
+  add_foreign_key "posts", "communities", column: "communities_id"
+  add_foreign_key "posts", "users", column: "users_id"
+  add_foreign_key "replies", "posts", column: "posts_id"
+  add_foreign_key "replies", "users", column: "users_id"
   add_foreign_key "shows", "studios", column: "studios_id"
 end
