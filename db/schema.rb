@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_24_155718) do
+ActiveRecord::Schema.define(version: 2021_03_17_175820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2021_02_24_155718) do
     t.text "description", null: false
     t.date "air_date", null: false
     t.string "thumbnail", null: false
+    t.bigint "shows_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "shows_id"
     t.index ["shows_id"], name: "index_episodes_on_shows_id"
   end
 
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 2021_02_24_155718) do
     t.text "description", null: false
     t.date "release_date", null: false
     t.integer "seasons", default: 0, null: false
+    t.bigint "studios_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "studios_id"
     t.index ["studios_id"], name: "index_shows_on_studios_id"
   end
 
