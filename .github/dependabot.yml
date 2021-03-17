@@ -14,3 +14,21 @@ updates:
       - lunaisnotaboy
     assignees:
       - lunaisnotaboy
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '00:00'
+    open-pull-requests-limit: 10
+    reviewers:
+      - lunaisnotaboy
+    assignees:
+      - lunaisnotaboy
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
