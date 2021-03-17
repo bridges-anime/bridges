@@ -23,10 +23,7 @@ tasks:
       cp .env.example .env && gem install solargraph && gem install bundler && bin/setup
     command: |
       gem install bundler && bin/setup && bin/startup
-  - command: |
-      gp await-port 3000 2>&1 >/dev/null && printf "Waiting for bridges server ..." && until
-      $(curl -sNL $(gp url 3000) | grep -q "html"); do printf '.'; sleep 5; done
-      && echo ""
+
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
