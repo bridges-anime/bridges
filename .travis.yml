@@ -12,12 +12,10 @@ env:
   global:
   - PGPORT=5433
   - PGUSER=travis
+  - PGPASSWORD=password
 before_install:
   - nvm install 14
   - gem install bundler:2.2.5
-  - psql -c "CREATE ROLE travis WITH PASSWORD 'password';" -U postgres
-  - psql -c 'ALTER ROLE travis SUPERUSER;' -U postgres
-  - psql -c 'ALTER ROLE travis CREATEDB;' -U postgres
 before_script:
   - bundle install --jobs=3 --retry=3
   - yarn
