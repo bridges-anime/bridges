@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -54,12 +55,16 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rubocop', '~> 1.12', require: false
+  gem 'rubocop-rails', '~> 2.9', require: false
+  gem 'brakeman', '~> 5.0', require: false
+  gem 'bundler-audit', '~> 0.8', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "tailwindcss-rails", "~> 0.3.3"
+gem 'tailwindcss-rails', '~> 0.3.3'
 
 gem 'capistrano', '~> 3.16'
 

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Api::V1::EpisodesController < ApplicationController
   def index
     episode = Episodes.all.order(created_at: :desciption)
@@ -13,12 +14,7 @@ class Api::V1::EpisodesController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def destroy
-  end
-
-  private
-  
+  def destroy; end
 end
