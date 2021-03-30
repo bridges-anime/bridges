@@ -2,12 +2,8 @@ language: ruby
 cache:
   - bundler
   - yarn
-addons:
-  postgresql: "12"
-  apt:
-    packages:
-    - postgresql-12
-    - postgresql-client-12
+services:
+  - postgresql
 env:
   global:
   - PGUSER=travis
