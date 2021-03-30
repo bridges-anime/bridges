@@ -5,15 +5,15 @@
 @import 'https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans&display=swap';
 
 :root {
-  --plyr-color-main: #5B21B6;
+  --plyr-color-main: #5b21b6;
   --plyr-font-family: 'Open Sans', sans-serif;
 }
 
 video {
   max-height: 480px;
-  background-color: black;
+  background-color: #000000;
 }
 
-.plyr:fullscreen video{
+.plyr:fullscreen video {
   max-height: initial;
 }
