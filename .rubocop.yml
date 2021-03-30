@@ -15,13 +15,13 @@ AllCops:
   - 'lib/templates/**/*'
 
 Bundler/OrderedGems:
-  Enabled: false
+  Enabled: true
 
 Layout/AccessModifierIndentation:
   EnforcedStyle: indent
 
 Layout/EmptyLineAfterMagicComment:
-  Enabled: false
+  Enabled: true
 
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
