@@ -29,6 +29,16 @@ gem 'activerecord-session_store', '~> 2.0'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
+gem 'http', '~> 4.4'
+
+gem 'http_accept_language', '~> 2.1'
+
+gem 'httplog', '~> 1.4.3'
+
+gem 'oj', '~> 3.11'
+
+gem 'link_header', '~> 0.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
