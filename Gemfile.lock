@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 0cd72a56f984a7ff089246f87a8b259120545edd
+  revision: ef9a2f410413b02b5234d80a73b42e296ebcc863
   specs:
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -248,7 +248,7 @@ DEPENDENCIES
   capistrano (~> 3.16)
   capistrano-rails (~> 1.4)
   capistrano-rbenv (~> 2.1, >= 2.1.4)
-  devise (~> 4.7, >= 4.7.3)!
+  devise (~> 4.7)!
   dotenv-rails (~> 2.7, >= 2.7.6)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)

@@ -22,7 +22,7 @@ gem 'redis', '~> 4.0'
 # Use .env files
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 # Use Devise for authentication
-gem 'devise', '~> 4.7', '>= 4.7.3', github: 'heartcombo/devise'
+gem 'devise', '~> 4.7', github: 'heartcombo/devise'
 # Use ActiveRecord Sessions
 gem 'activerecord-session_store', '~> 2.0'
 
