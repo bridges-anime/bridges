@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: ef9a2f410413b02b5234d80a73b42e296ebcc863
+  revision: e8e0c275999dd98150197cab03acb5509cb16b6a
   specs:
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -134,7 +134,7 @@ GEM
     httplog (1.4.3)
       rack (>= 1.0)
       rainbow (>= 2.0.0)
-    i18n (1.8.9)
+    i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
