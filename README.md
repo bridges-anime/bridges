@@ -33,3 +33,9 @@ bridges is licensed under the [AGPL](LICENSE).
 bridges is hosted on [GitHub].
 
 [GitHub]: https://github.com/bridges-anime/bridges
+
+### Hey, I found a bug!
+
+You can report it on our [Jira].
+
+[Jira]: https://bridgesjp.atlassian.net
