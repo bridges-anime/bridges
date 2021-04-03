@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', "data-turbo-track": "reload" %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= yield :head %>
   </head>
 
@@ -90,7 +90,7 @@
               </div>
             </div>
           </div>
-          <% if is_user_logged_in != true %>
+          <% if user_signed_in? != true %>
             <div
               class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
             >

@@ -52,3 +52,7 @@ yarn-debug.log*
 .env.production.local
 .env
 .env.local
+
+# /db/seeds contain copyrighted data, so gitignore them
+/db/seeds/*
+!/db/seeds/.keep
