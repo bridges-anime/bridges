@@ -3,7 +3,7 @@
 # Assets (@bridges-anime/images & @bridges-anime/styles)
 /app/assets/images/ @bridges-anime/images
 /app/assets/stylesheets/ @bridges-anime/styles
-/postcss.config.js @bridges-anime/styles
+/app/javascript/stylesheets/postcss.config.js @bridges-anime/styles
 
 # Community files (@lunaisnotaboy)
 /.github/ @lunaisnotaboy
@@ -11,6 +11,8 @@
 /CODE_OF_CONDUCT.md @lunaisnotaboy
 /LICENSE @lunaisnotaboy
 /CODEOWNERS @lunaisnotaboy
+/SECURITY.md @lunaisnotaboy
+/AUTHORS.md @lunaisnotaboy
 
 # JS stuff (@bridges-anime/javascript)
 /package.json @bridges-anime/javascript
