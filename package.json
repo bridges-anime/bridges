@@ -12,7 +12,7 @@
     "autoprefixer": "^9",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "plyr": "^3.6.4",
-    "postcss": "^7",
+    "postcss": "^8",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
