@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/bridges-anime/bridges/raw/master/app/assets/images/logo.svg" alt="bridges logo" width="256px" />
+  <img src="https://glimmerhq.com/bridges/bridges/-/raw/master/app/assets/images/logo.svg" alt="bridges logo" width="256px" />
 
   <h1>bridges</h1>
 
@@ -30,8 +30,9 @@ bridges is licensed under the [AGPL](LICENSE).
 
 ### Canonical Source
 
-bridges is hosted on [GitHub].
+bridges is hosted on [glimmerhq.com]. The repository on [GitHub] is an official mirror.
 
+[glimmerhq.com]: https://glimmerhq.com/bridges/bridges
 [GitHub]: https://github.com/bridges-anime/bridges
 
 ### Hey, I found a bug!

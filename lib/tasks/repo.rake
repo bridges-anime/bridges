@@ -11,7 +11,7 @@ namespace :repo do
       Authors
       =======
 
-      Bridges is available on [GitHub](https://github.com/bridges-anime/bridges)
+      Bridges is available on [glimmerhq.com](https://glimmerhq.com/bridges/bridges)
       and provided thanks to the work of the following contributors:
 
     HEADER

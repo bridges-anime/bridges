@@ -1,0 +1,33 @@
+# The code owners file
+
+# Assets (@bridges/images & @bridges/styles)
+/app/assets/images/ @bridges/images
+/app/assets/stylesheets/ @bridges/styles
+/app/javascript/stylesheets/tailwind.config.js @bridges/styles
+
+# Community files (@luna)
+/.github/ @luna
+/README.md @luna
+/CODE_OF_CONDUCT.md @luna
+/LICENSE @luna
+/CODEOWNERS @luna
+/SECURITY.md @luna
+/AUTHORS.md @luna
+
+# JS stuff (@bridges/javascript)
+/package.json @bridges/javascript
+/yarn.lock @bridges/javascript
+/babel.config.js @bridges/javascript
+/app/javascript @bridges/javascript
+
+# Ruby (@bridges/rails)
+*.rb @bridges/rails
+/Gemfile @bridges/rails
+/Gemfile.lock @bridges/rails
+/app/views/ @bridges/rails
+/app/channels/ @bridges/rails
+/app/controllers/ @bridges/rails
+/app/helpers/ @bridges/rails
+/app/jobs/ @bridges/rails
+/app/mailers/ @bridges/rails
+/app/models/ @bridges/rails
