@@ -10,5 +10,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial application
 
-[Unreleased]: https://glimmerhq.com/bridges/bridges/-/compare/v0.1...HEAD
+[Unreleased]: https://glimmerhq.com/bridges/bridges/-/compare/v0.1...master
 [v0.1]: https://glimmerhq.com/bridges/bridges/-/tags/v0.1
