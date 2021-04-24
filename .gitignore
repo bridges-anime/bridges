@@ -40,6 +40,9 @@ yarn-debug.log*
 /vendor/*
 !/vendor/.keep
 
+# Ignore database.yml
+/config/database.yml
+
 # .env files
 .env.development
 .env.development.local
