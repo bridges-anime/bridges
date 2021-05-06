@@ -6,15 +6,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.3'
+gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 5.2'
 # Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
+gem 'sass-rails', '>= 6.0.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.2'
+gem 'webpacker', '~> 5.2', '>= 5.2.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -24,9 +24,9 @@ gem 'redis', '~> 4.0'
 # Use .env files
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 # Use Devise for authentication
-gem 'devise', '~> 4.7', github: 'heartcombo/devise'
+gem 'devise', '~> 4.7', '>= 4.7.3', github: 'heartcombo/devise'
 # Use ActiveRecord Sessions
-gem 'activerecord-session_store', '~> 2.0'
+gem 'activerecord-session_store', '~> 2.0', '>= 2.0.0'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
@@ -47,13 +47,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 5.0.0'
+  gem 'rspec-rails', '~> 5.0.1'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '~> 3.5'
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '>= 4.1.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'brakeman', '~> 5.0', require: false
   gem 'bundler-audit', '~> 0.8', require: false
