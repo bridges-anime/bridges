@@ -11,7 +11,7 @@
     "@tailwindcss/forms": "^0.3.2",
     "autoprefixer": "^10",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "plyr": "^3.6.4",
+    "plyr": "^3.6.5",
     "postcss": "^7",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
