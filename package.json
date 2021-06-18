@@ -16,7 +16,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "tailwindcss": "2.2.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
