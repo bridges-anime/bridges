@@ -31,7 +31,7 @@ gem 'activerecord-session_store', '~> 2.0'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
-gem 'http', '~> 4.4'
+gem 'http', '~> 4.4', '>= 4.4.1'
 
 gem 'http_accept_language', '~> 2.1'
 
